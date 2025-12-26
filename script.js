@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neofilisoft - Free Download</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FeReader</h1>
+    <p>Available on</p>
+    <div class="buttons">
+      <a class="download-btn" href="https://github.com/neofilisoft/FeReader/releases/download/ebook/FeReader_v3.1.2.zip" target="_blank">
+        <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/windows8.png" alt="Windows">
+        Windows
+      </a>
+      
+      <a class="download-btn" href="https://github.com/neofilisoft/FeReader-Debian/releases/download/ebook/fereader-1.0.0-amd64.deb" target="_blank">
+        <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/linux.png" alt="Linux">
+        Linux
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Coming Soon...</h2>
+  </div>
+
+  <div class="footer">
+    Copyright © 2025 Neofilisoft. All rights reserved.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

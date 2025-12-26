@@ -1,0 +1,72 @@
+body {
+  font-family: 'Noto Sans JP', Marcellus, sans-serif;
+  background-color: #0c0c0c;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #ccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.download-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 100px;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #45a049;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.footer {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  color: #fffafa;
+  font-size: 12px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
