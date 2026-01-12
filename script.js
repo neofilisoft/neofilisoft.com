@@ -1,37 +1,70 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neofilisoft - Free Download</title>
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>FeReader</h1>
-    <p>Available on</p>
-    <div class="buttons">
-      <a class="download-btn" href="https://github.com/neofilisoft/FeReader/releases/download/ebook/FeReader_v3.1.2.zip" target="_blank">
-        <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/windows8.png" alt="Windows">
-        Windows
-      </a>
-      
-      <a class="download-btn" href="https://github.com/neofilisoft/FeReader-Debian/releases/download/ebook/fereader-1.0.0-amd64.deb" target="_blank">
-        <img class="icon" src="https://img.icons8.com/ios-filled/50/ffffff/linux.png" alt="Linux">
-        Linux
-      </a>
-    </div>
-  </div>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { 
+    getAuth, 
+    GoogleAuthProvider, 
+    GithubAuthProvider, 
+    TwitterAuthProvider, 
+    signInWithPopup,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-  <div class="section">
-    <h2>Coming Soon...</h2>
-  </div>
+const firebaseConfig = {
+  apiKey: "AIzaSy...",          
+  authDomain: "...",            
+  projectId: "...",             
+  storageBucket: "...",        
+  messagingSenderId: "...",     
+  appId: "..."                  // แก้ตรงนี้
+};
 
-  <div class="footer">
-    Copyright © 2025 Neofilisoft. All rights reserved.
-  </div>
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-  <script src="script.js"></script>
-</body>
-</html>
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+
+function socialLogin(provider) {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        console.log("Login Success:", result.user);
+    })
+    .catch((error) => {
+        console.error(error);
+        alert("Error: " + error.message);
+    });
+}
+
+window.logoutUser = () => {  
+    signOut(auth).then(() => {
+        alert("Signed out successfully");
+    }).catch((error) => console.error(error));
+};
+
+onAuthStateChanged(auth, (user) => {
+    const authSection = document.querySelector('.auth-section');
+    
+    if (user) {
+        console.log("User is logged in:", user.displayName);
+        
+        authSection.innerHTML = `
+            <h2>Welcome, ${user.displayName}</h2>
+            <p style="color: #ccc; margin-bottom: 20px;">You are logged in.</p>
+            <button onclick="logoutUser()" class="btn-auth login" style="color: #ff4444; border-color: #ff4444;">Log Out</button>
+        `;
+    } else {
+        console.log("User is logged out");
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const googleBtn = document.getElementById('google-login');
+    const githubBtn = document.getElementById('github-login');
+    const twitterBtn = document.getElementById('twitter-login');
+    const fbBtn = document.getElementById('facebook-login');
+
+    if (googleBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(googleProvider); });
+    if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
+    if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
+});
