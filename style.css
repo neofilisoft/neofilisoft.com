@@ -213,7 +213,7 @@ p {
   color: #ccc;           
   text-decoration: none;  
   margin-left: 20px;
-  font-size: 12px;
+  font-size: 12px;    
   transition: 0.3s;      
 }
 
@@ -233,7 +233,7 @@ p {
 
 .footer-links a {
   color: #ccc; 
-  text-decoration: none; 
+  text-decoration: none;
   transition: color 0.3s;
 }
 
@@ -241,4 +241,3 @@ p {
   color: #fff; 
   text-decoration: underline; 
 }
-
