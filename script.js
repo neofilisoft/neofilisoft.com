@@ -39,6 +39,7 @@ function socialLogin(provider) {
 window.logoutUser = () => {  
     signOut(auth).then(() => {
         alert("Signed out successfully");
+    window.location.reload();
     }).catch((error) => console.error(error));
 };
 
@@ -68,3 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
 });
+
