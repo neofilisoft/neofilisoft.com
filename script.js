@@ -45,7 +45,7 @@ window.logoutUser = () => {
 
 onAuthStateChanged(auth, (user) => {
     const authSection = document.querySelector('.auth-section');
-    
+    if (authSection) {
     if (user) {
         console.log("User is logged in:", user.displayName);
         
@@ -57,6 +57,7 @@ onAuthStateChanged(auth, (user) => {
     } else {
         console.log("User is logged out");
     }
+  } 
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,4 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
 });
+
 
