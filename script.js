@@ -52,7 +52,7 @@ onAuthStateChanged(auth, (user) => {
         authSection.innerHTML = `
             <h2>Welcome, ${user.displayName}</h2>
             <p style="color: #ccc; margin-bottom: 20px;">You are logged in.</p>
-            <button onclick="logoutUser()" class="btn-auth login" style="color: #ff4444; border-color: #ff4444;">Log Out</button>
+            <button onclick="logoutUser()" class="btn-auth login" style="color: #ff4444; border-color: #ff4444;">Sign Out</button>
         `;
     } else {
         console.log("User is logged out");
@@ -70,5 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
 });
+
 
 
