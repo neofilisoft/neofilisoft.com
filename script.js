@@ -10,12 +10,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSy...",          
-  authDomain: "...",            
-  projectId: "...",             
-  storageBucket: "...",        
-  messagingSenderId: "...",     
-  appId: "..."                  // แก้ตรงนี้
+  apiKey: "AIzaSyCqKSsFkgn2H0_6uanegYVICLUpaTsHUac",          
+  authDomain: "neofilisoft.firebaseapp.com",            
+  projectId: "neofilisoft",             
+  storageBucket: "neofilisoft.firebasestorage.app",        
+  messagingSenderId: "857226091016",     
+  appId: "1:857226091016:web:86218fdcac941159b94fbd"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -68,3 +68,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
 });
+
