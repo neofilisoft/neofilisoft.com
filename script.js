@@ -69,8 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (googleBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(googleProvider); });
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
-    if (fbBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(googleProvider); });
+    if (fbBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(facebookProvider); });
 });
+
 
 
 
