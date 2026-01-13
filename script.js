@@ -38,7 +38,6 @@ function socialLogin(provider) {
 
 window.logoutUser = () => {  
     signOut(auth).then(() => {
-        alert("Signed out successfully");
     window.location.reload();
     }).catch((error) => console.error(error));
 };
@@ -57,7 +56,7 @@ onAuthStateChanged(auth, (user) => {
     } else {
         console.log("User is logged out");
     }
-  } 
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,10 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (googleBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(googleProvider); });
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
-    if (fbBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(facebookProvider); });
+    if (fbBtn) facebookBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(facebookProvider); });
 });
-
-
-
-
-
