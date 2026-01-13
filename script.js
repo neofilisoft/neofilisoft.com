@@ -3,6 +3,7 @@ import {
     getAuth, 
     GoogleAuthProvider, 
     GithubAuthProvider, 
+    FacebookAuthProvider,
     TwitterAuthProvider, 
     signInWithPopup,
     onAuthStateChanged,
@@ -23,6 +24,7 @@ const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
 
 function socialLogin(provider) {
@@ -68,5 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (googleBtn) googleBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(googleProvider); });
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
-    if (fbBtn) facebookBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(facebookProvider); });
+    if (fbBtn) fbBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(facebookProvider); });
 });
