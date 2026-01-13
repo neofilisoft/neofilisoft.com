@@ -202,3 +202,25 @@ p {
   width: 16px;
   height: 16px;
 }
+
+.footer {
+  display: flex;
+  gap: 15px; 
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px; 
+}
+
+.footer-links a {
+  color: #ccc; 
+  text-decoration: none; 
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff; 
+  text-decoration: underline; 
+}
