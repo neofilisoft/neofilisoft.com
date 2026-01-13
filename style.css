@@ -209,6 +209,23 @@ p {
   align-items: center;
 }
 
+.footer a {
+  color: #ccc;           
+  text-decoration: none;  
+  margin-left: 20px;
+  font-size: 12px;
+  transition: 0.3s;      
+}
+
+.footer a:first-of-type {
+  margin-left: 280px;
+}
+
+.footer a:hover {
+  color: #ffffff;         
+  text-decoration: underline; 
+}
+
 .footer-links {
   display: flex;
   gap: 10px; 
@@ -224,3 +241,4 @@ p {
   color: #fff; 
   text-decoration: underline; 
 }
+
