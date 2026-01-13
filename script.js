@@ -15,7 +15,7 @@ const firebaseConfig = {
   projectId: "neofilisoft",             
   storageBucket: "neofilisoft.firebasestorage.app",        
   messagingSenderId: "857226091016",     
-  appId: "1:857226091016:web:86218fdcac941159b94fbd"
+  appId: "1:857226091016:web:86218fdcac941159b94fbd"          
 };
 
 const app = initializeApp(firebaseConfig);
@@ -68,4 +68,3 @@ document.addEventListener('DOMContentLoaded', () => {
     if (githubBtn) githubBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(githubProvider); });
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
 });
-
