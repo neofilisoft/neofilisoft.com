@@ -9,9 +9,9 @@ import {
     onAuthStateChanged,
     signOut
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
+import.meta.env.VITE_FIREBASE_API_KEY,
 const firebaseConfig = {
-  apiKey: "AIzaSyCqKSsFkgn2H0_6uanegYVICLUpaTsHUac",          
+  apiKey: process.env.FIREBASE_API,          
   authDomain: "neofilisoft.firebaseapp.com",            
   projectId: "neofilisoft",             
   storageBucket: "neofilisoft.firebasestorage.app",        
@@ -72,3 +72,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (twitterBtn) twitterBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(twitterProvider); });
     if (fbBtn) fbBtn.addEventListener('click', (e) => { e.preventDefault(); socialLogin(facebookProvider); });
 });
+
